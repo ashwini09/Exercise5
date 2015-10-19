@@ -1,0 +1,14 @@
+<section data-ng-controller="BucketlistsController" data-ng-init="find()">
+    <div class="page-header">
+        <h1>Bucketlists</h1>
+    </div>
+    <div class="list-group">
+        <a data-ng-repeat="bucketlist in bucketlists" data-ng-href="#!/bucketlists/{{bucketlist._id}}" class="list-group-item">
+            <h3 class="list-group-item-heading" data-ng-bind="bucketlist.name"></h3>
+            <h5 class="list-group-item-heading" data-ng-bind="bucketlist.description"></h5>
+        </a>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!bucketlists.$resolved || bucketlists.length">
+        No Bucketlists yet, why don't you <a href="/#!/bucketlists/create">create one</a>?
+    </div>
+</section>
